@@ -1,0 +1,63 @@
+<p>recipe works!</p>
+<div class="recipe-container">
+
+    <h2>Global CookBook</h2>
+
+    <h3>Recipe Information</h3>
+
+    <!-- Interpolation / Data Binding -->
+
+    <p>
+        <b>Recipe:</b>
+        {{ recipeName }}
+    </p>
+
+    <p>
+        <b>Country:</b>
+        {{ country }}
+    </p>
+
+    <p>
+        <b>Category:</b>
+        {{ category }}
+    </p>
+
+    <p>
+        <b>Ingredients:</b>
+        {{ ingredients }}
+    </p>
+
+
+    <!-- Event Binding -->
+
+    <button (click)="changeRecipe()">
+        Change Recipe
+    </button>
+
+
+    <!-- Angular Control Flow -->
+
+    @if (showDetails) {
+
+        <div class="details">
+
+            <h3>Recipe Details</h3>
+
+            <p>
+                Recipe details are currently visible.
+            </p>
+
+        </div>
+
+    }
+
+
+    <!-- Class Binding -->
+
+    <p [class.highlight]="showDetails">
+
+        This text uses Angular data binding.
+
+    </p>
+
+</div>

@@ -1,0 +1,51 @@
+.experiments-page {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.experiments-page h1,
+.intro {
+  text-align: center;
+}
+
+.experiments-page h1 {
+  color: #174a2e;
+}
+
+.intro {
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.experiment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.experiment-card {
+  padding: 22px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #00000012;
+  border-left: 5px solid #287347;
+}
+
+.experiment-card h2 {
+  font-size: 19px;
+  color: #174a2e;
+}
+
+.experiment-card p {
+  line-height: 1.6;
+}
+
+.experiment-card span {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #e5f2e5;
+  color: #174a2e;
+  border-radius: 5px;
+  font-size: 13px;
+}

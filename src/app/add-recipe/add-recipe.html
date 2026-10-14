@@ -1,0 +1,61 @@
+<div class="form-container">
+
+    <h1>➕ Add New Recipe</h1>
+
+    <form (ngSubmit)="addRecipe()">
+
+        <label>Recipe Name:</label>
+
+        <input
+            type="text"
+            name="recipeName"
+            [(ngModel)]="recipeName"
+            required
+        >
+
+        <br><br>
+
+
+        <label>Country:</label>
+
+        <input
+            type="text"
+            name="country"
+            [(ngModel)]="country"
+            required
+        >
+
+        <br><br>
+
+
+        <label>Category:</label>
+
+        <input
+            type="text"
+            name="category"
+            [(ngModel)]="category"
+            required
+        >
+
+        <br><br>
+
+
+        <label>Ingredients:</label>
+
+        <textarea
+            name="ingredients"
+            [(ngModel)]="ingredients"
+            required>
+        </textarea>
+
+        <br><br>
+
+      <button type="submit" [disabled]="isSaving">
+        {{ isSaving ? 'Saving...' : 'Save Recipe' }}
+    </button>
+
+    <p>{{ message }}</p>
+
+</form>
+
+</div>

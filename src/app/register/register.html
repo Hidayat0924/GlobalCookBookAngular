@@ -1,0 +1,76 @@
+ <section class="auth-container">
+  <h1>🍳 Create Your Account</h1>
+  <p>Join Global CookBook and explore recipes worldwide!</p>
+
+  <form (ngSubmit)="registerUser()">
+    <label>Full Name</label>
+    <input
+      type="text"
+      name="fullName"
+      [(ngModel)]="fullName"
+      placeholder="Enter your full name"
+      required
+    />
+
+    <label>Email Address</label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      placeholder="Enter your email"
+      required
+    />
+
+    <label>Mobile Number</label>
+    <input
+      type="tel"
+      name="mobile"
+      [(ngModel)]="mobile"
+      placeholder="Enter your mobile number"
+      required
+    />
+
+    <label>Country</label>
+    <select name="country" [(ngModel)]="country" required>
+      <option value="">Select your country</option>
+      <option value="India">India</option>
+      <option value="Italy">Italy</option>
+      <option value="Japan">Japan</option>
+      <option value="Mexico">Mexico</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label>Username</label>
+    <input
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      placeholder="Choose a username"
+      required
+    />
+
+    <label>Password</label>
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      placeholder="Create a password"
+      minlength="6"
+      required
+    />
+
+    <label>Confirm Password</label>
+    <input
+      type="password"
+      name="confirmPassword"
+      [(ngModel)]="confirmPassword"
+      placeholder="Re-enter your password"
+      required
+    />
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p>{{ message }}</p>
+  <p>Already registered? <a routerLink="/login">Login here</a></p>
+</section>

@@ -1,0 +1,58 @@
+.edit-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 28px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px #00000015;
+}
+
+h1 {
+  text-align: center;
+  color: #174a2e;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  margin: 18px 8px 0 0;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #174a2e;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background: #666;
+}
+
+.message {
+  color: #a33;
+}

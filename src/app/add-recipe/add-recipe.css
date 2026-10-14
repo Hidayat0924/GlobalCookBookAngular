@@ -1,0 +1,42 @@
+.form-container {
+
+    width: 500px;
+
+    margin: 40px auto;
+
+    font-family: Arial;
+
+}
+
+.form-container h1 {
+
+    text-align: center;
+
+    color: darkgreen;
+
+}
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+}
+
+textarea {
+
+    height: 100px;
+
+}
+
+button {
+
+    padding: 10px 20px;
+
+    cursor: pointer;
+
+}

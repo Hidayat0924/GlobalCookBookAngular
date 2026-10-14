@@ -1,0 +1,69 @@
+<section class="recipes-page">
+  <h1>🍽️ Explore Our Recipes</h1>
+  <p>Discover delicious dishes from around the world.</p>
+
+  <!-- Display backend errors independently of recipe results -->
+  @if (errorMessage) {
+    <p class="error-message">{{ errorMessage }}</p>
+  }
+
+  <div class="filters">
+    <input
+      type="text"
+      placeholder="🔍 Search by recipe name..."
+      [(ngModel)]="searchText"
+    />
+
+    <select [(ngModel)]="selectedCountry">
+      <option value="All">All Countries</option>
+      <option value="India">India</option>
+      <option value="Italy">Italy</option>
+      <option value="Japan">Japan</option>
+      <option value="Mexico">Mexico</option>
+    </select>
+  </div>
+
+  <div class="recipe-grid">
+    @for (recipe of filteredRecipes; track recipe.id ?? recipe.name) {
+      <article class="recipe-card">
+        <div class="food-icon">
+          @if (recipe.country === 'India') {
+            🍛
+          } @else if (recipe.country === 'Italy') {
+            🍕
+          } @else if (recipe.country === 'Japan') {
+            🍣
+          } @else if (recipe.country === 'Mexico') {
+            🌮
+          } @else {
+            🍴
+          }
+        </div>
+
+        <h2>{{ recipe.name }}</h2>
+        <p><strong>Country:</strong> {{ recipe.country }}</p>
+        <p><strong>Category:</strong> {{ recipe.category }}</p>
+        <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+      <div class="recipe-actions">
+  <button
+    type="button"
+    class="edit-button"
+    [routerLink]="['/edit-recipe', recipe.id]">
+    ✏️ Edit
+  </button>
+
+  <button
+    type="button"
+    class="delete-button"
+    (click)="deleteRecipe(recipe)">
+    🗑️ Delete
+  </button>
+</div>
+      </article>
+    } @empty {
+      @if (!errorMessage) {
+        <p class="no-results">No recipes found. Try another search!</p>
+      }
+    }
+  </div>
+</section>

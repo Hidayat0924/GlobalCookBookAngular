@@ -1,0 +1,61 @@
+
+<section class="edit-container">
+  <h1>✏️ Edit Recipe</h1>
+
+  <p>Loading status: {{ isLoading ? 'Loading' : 'Finished' }}</p>
+
+  @if (isLoading) {
+    <p>Loading recipe...</p>
+  } @else {
+    @if (message) {
+      <p class="message">{{ message }}</p>
+    }
+
+    @if (recipeId > 0 && recipeName) {
+      <form (ngSubmit)="saveChanges()">
+        <label for="recipeName">Recipe Name</label>
+        <input
+          id="recipeName"
+          type="text"
+          name="recipeName"
+          [(ngModel)]="recipeName"
+          required
+        />
+
+        <label for="country">Country</label>
+        <input
+          id="country"
+          type="text"
+          name="country"
+          [(ngModel)]="country"
+          required
+        />
+
+        <label for="category">Category</label>
+        <input
+          id="category"
+          type="text"
+          name="category"
+          [(ngModel)]="category"
+          required
+        />
+
+        <label for="ingredients">Ingredients</label>
+        <textarea
+          id="ingredients"
+          name="ingredients"
+          [(ngModel)]="ingredients"
+          required
+        ></textarea>
+
+        <button type="submit" [disabled]="isSaving">
+          {{ isSaving ? 'Saving...' : 'Save Changes' }}
+        </button>
+
+        <button type="button" routerLink="/recipes">
+          Cancel
+        </button>
+      </form>
+    }
+  }
+</section>
